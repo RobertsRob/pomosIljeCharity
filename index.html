@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="data_struct_EmilsIlja.js"></script>
+    <style>
+        .marginLeft10
+        {
+            margin-left: 10px;
+        }
+        .marginRight10
+        {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div  class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>
+                    <b>Izvēlies pirmo komandu</b>
+                </h4>
+
+                <form name="Komanda">
+                    <select name="teams" id="teamSelect">
+                        <option value="Komanda A">Komanda A</option>
+                        <option value="Komanda B">Komanda B</option>
+                        <option value="Komanda C">Komanda C</option>
+                        <option value="Komanda D">Komanda D</option>
+                    </select>
+                    <br>
+                </form>
+
+                <form name="SpNummurs" onclick="return false;">
+                    
+                    <b>Ieraksti Spēlētāja numuru</b>
+                    
+                    <br>
+                    <input type="number" name="nummurs" id="playerNumber">
+                </form>
+                <br>
+
+                <form name="IemPunkti" onclick="return false;">
+                    <b class="marginRight10"> Punkti</b>
+                    
+                    <button class="btn btn-primary marginRight10" name="+1" onclick="newVrInp(this);" value="1"> +1</button>
+                    <button class="btn btn-primary marginRight10" name="+2" onclick="newVrInp(this);" value="2"> +2</button>
+                    <button class="btn btn-primary" name="+3" onclick="newVrInp(this);" value="3"> +3</button>
+                </form>
+                <br>
+
+                <form name="Piezime" onclick="return false;">
+                    <b class="marginRight10"> Piezīme</b>
+                    <button class="btn btn-primary" name="-1" onclick="newVrInp(this);" value="strafs"> -1</button>
+                </form>
+
+            </div>
+        </div>
+        <br>
+        <div class="container row">
+            <div class="col-md-6">
+                <button class="btn btn-primary" onclick="buttonPressDownload();">Statistika</button>
+            </div>
+        </div>
+        <br>
+        <div class="container row">
+            <div class="col-md-6">
+                <button class="btn btn-danger" onclick="clearIeprV();">Dzēst datus</button>
+            </div>
+        </div>
+    </div>
+    <a id="a2" download=".csv" style="display: none;" href="">Download</a>
+</body>
+</html>
