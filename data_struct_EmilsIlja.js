@@ -10,7 +10,7 @@ function buttonPressDownload()
     if(listArMn.length >= 1)
     {
         
-        let content = "Komanda,Speletaja Numurs,Punkti" + infoWhatAllTable;
+        let content = "Komanda,Speletaja Numurs,Punkti,Ievaditais Laiks" + infoWhatAllTable;
     
         // const csvBlob = new Blob(["1, 5"]);
         const csvBlob = new Blob([content]);
@@ -64,6 +64,13 @@ function newVrInp(button)
     }
     //alert(playerNumber);
 
+     let datetime = + currentdate.getDate() + "/"
+                    + (currentdate.getMonth()+1)  + "/" 
+                    + currentdate.getFullYear() + " - "  
+                    + currentdate.getHours() + ":"  
+                    + currentdate.getMinutes() + ":" 
+                    + currentdate.getSeconds();
+
 
     if(selectedValue.length < 2 || playerNumber.length < 1)
     {
@@ -75,7 +82,7 @@ function newVrInp(button)
         return;
     }
     //let gameResult = valTeamEsos + ":" + valTeamAnother;
-    let whTP = "\n" + selectedValue +  "," + playerNumber + "," + points;
+    let whTP = "\n" + selectedValue +  "," + playerNumber + "," + points + "," + datetime;
     listArMn.push(whTP);
 
     // localStorage.setItem("basketball", listArMn);
